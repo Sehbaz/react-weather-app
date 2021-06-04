@@ -1,18 +1,18 @@
+import { Button } from "@material-ui/core";
 import React from "react";
 import { Link } from "react-router-dom";
 import News from "../News/News";
 import WeatherData from "../Weather/WeatherData";
+import "./Home.css";
 const Home = () => {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/addCity">Add City</Link>
-          </li>
-        </ul>
-      </nav>
-      Hello from home container
+    <div className="home-main-container">
+      <div className="nav-container">
+        <Link to="/addCity">
+          <Button variant="outlined">ADD CITY</Button>
+        </Link>
+      </div>
+
       <WeatherData />
       <News />
     </div>
