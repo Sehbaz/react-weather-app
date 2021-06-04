@@ -48,7 +48,7 @@ const News = () => {
   return (
     <div className="news-main-container">
       <div>
-        <p className="news-title">Top 5 Tech news</p>
+        <p className="news-title">Top 5 Tech News</p>
       </div>
       <List className={classes.root} className="newList-container">
         {items.map((item) => (
