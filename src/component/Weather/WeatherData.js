@@ -1,6 +1,7 @@
 import "./WeatherData.css";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-const WeatherData = () => {
+const WeatherData = (props) => {
+  console.log(props.data);
   const loginContactRequired = "block";
   return (
     <div className="weather-main-container">
@@ -19,7 +20,7 @@ const WeatherData = () => {
          
         </div>
          */}
-        <span className="city-name">Leicester</span>
+        <span className="city-name">{props.data}</span>
         <span className="temp">15&deg;</span>
       </div>
       <div className="next-weather-container">

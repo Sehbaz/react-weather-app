@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, TextField } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
@@ -24,44 +24,57 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
 });
-const Weather = () => {
+const Weather = (props) => {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
+  const onInputCityChangeHandler = (e) => {
+    if (e.key === "Enter") {
+      // Do code here
+      e.preventDefault();
+    }
+    setCity(e.target.value);
+  };
+  const onInputCountryChangeHandler = (e) => {
+    setCountry(e.target.value);
+  };
+
+  const submitForm = (event) => {
+    event.preventDefault();
+    props.history.push({
+      pathname: "/",
+      city,
+    });
+  };
+
   return (
     <div>
       <div className="main-container">
         <Card className={classes.root} className="card-container">
           <span className="card-title">Add your city</span>
           <CardContent>
-            <form className="form-container">
+            <form className="form-container" onSubmit={submitForm}>
               <TextField
                 required
-                id="outlined-required"
+                id="city"
                 label="City"
                 variant="outlined"
                 style={{ margin: "1rem 0" }}
                 placeholder="Leicester"
                 fullWidth
                 className="inputField"
-              />
-              <TextField
-                required
-                fullWidth
-                id="outlined-required"
-                label="Country"
-                variant="outlined"
-                style={{ margin: "1rem 0" }}
-                placeholder="IN"
+                onChange={onInputCityChangeHandler}
               />
             </form>
-          </CardContent>
-
-          <Link to="/" className="nav-button" width={1}>
-            {" "}
-            <Button variant="outlined" className="form-btn" fullWidth>
+            <Button
+              variant="outlined"
+              className="form-btn"
+              fullWidth
+              type="submit"
+            >
               VIEW WEATHER
             </Button>
-          </Link>
+          </CardContent>{" "}
         </Card>
       </div>
     </div>
