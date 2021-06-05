@@ -1,6 +1,6 @@
 import { Button } from "@material-ui/core";
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import News from "../News/News";
 import WeatherData from "../Weather/WeatherData";
 import AddIcon from "@material-ui/icons/Add";

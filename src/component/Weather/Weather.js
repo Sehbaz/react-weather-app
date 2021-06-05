@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { Button, TextField } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
 import "./Weather.css";
 
 const useStyles = makeStyles({
@@ -27,12 +24,9 @@ const useStyles = makeStyles({
 const Weather = (props) => {
   const classes = useStyles();
   const [city, setCity] = useState("");
-  const [country, setCountry] = useState("");
+
   const onInputCityChangeHandler = (e) => {
     setCity(e.target.value);
-  };
-  const onInputCountryChangeHandler = (e) => {
-    setCountry(e.target.value);
   };
 
   const submitForm = (event) => {
@@ -45,7 +39,7 @@ const Weather = (props) => {
   return (
     <div>
       <div className="main-container">
-        <Card className={classes.root} className="card-container">
+        <Card className={(classes.root, "card-container")}>
           <span className="card-title">Add your city</span>
           <CardContent>
             <form className="form-container" onSubmit={submitForm}>

@@ -3,11 +3,9 @@ import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import Divider from "@material-ui/core/Divider";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
-import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -21,8 +19,6 @@ const useStyles = makeStyles((theme) => ({
 const News = () => {
   const classes = useStyles();
 
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -32,17 +28,11 @@ const News = () => {
       .then((res) => res.json())
       .then(
         (result) => {
-          setIsLoaded(true);
           setItems(result.articles);
-          console.log(result.articles);
-        },
+        }
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
         // exceptions from actual bugs in components.
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
       );
   }, []);
   return (
@@ -50,9 +40,9 @@ const News = () => {
       <div>
         <p className="news-title">Top 5 Tech News</p>
       </div>
-      <List className={classes.root} className="newList-container">
+      <List className={(classes.root, "newList-container")}>
         {items.map((item) => (
-          <ListItem alignItems="flex-start" key={item.id}>
+          <ListItem alignItems="flex-start" key={item.author}>
             <ListItemAvatar>
               <Avatar alt="Remy Sharp" src={item.urlToImage} />
             </ListItemAvatar>

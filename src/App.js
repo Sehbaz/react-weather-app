@@ -1,9 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Weather from "./component/Weather/Weather.js";
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import InputForm from "./InputForm";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./component/Home/Home";
 
 function App() {

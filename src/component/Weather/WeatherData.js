@@ -55,19 +55,3 @@ const WeatherData = (props) => {
   );
 };
 export default WeatherData;
-{
-  /*
-        <div className="weather-img">
-          <span
-            style={{ display: loginContactRequired }}
-            className="dot"
-          ></span>
-          <span
-            style={{ display: loginContactRequired }}
-            className="dot"
-          ></span>
-       
-         
-        </div>
-         */
-}
