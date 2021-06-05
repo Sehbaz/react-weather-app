@@ -1,4 +1,5 @@
 import "./WeatherData.css";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 const WeatherData = () => {
   const loginContactRequired = "block";
   return (
@@ -23,6 +24,7 @@ const WeatherData = () => {
       </div>
       <div className="next-weather-container">
         <span>Next Day 25&deg;</span>
+        <ExpandMoreIcon />
       </div>
     </div>
   );

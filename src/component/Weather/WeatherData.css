@@ -9,7 +9,7 @@
 .weather-data-container {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
-  height: 75vh;
+  height: 65vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -29,4 +29,9 @@
 }
 .city-name {
   font-size: 1.3rem;
+}
+.next-weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

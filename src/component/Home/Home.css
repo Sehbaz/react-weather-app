@@ -5,3 +5,8 @@
 .nav-container {
   padding: 0.5rem;
 }
+.nav-button {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-weight: 100;
+}
