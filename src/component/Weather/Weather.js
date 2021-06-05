@@ -29,10 +29,6 @@ const Weather = (props) => {
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
   const onInputCityChangeHandler = (e) => {
-    if (e.key === "Enter") {
-      // Do code here
-      e.preventDefault();
-    }
     setCity(e.target.value);
   };
   const onInputCountryChangeHandler = (e) => {
@@ -40,7 +36,6 @@ const Weather = (props) => {
   };
 
   const submitForm = (event) => {
-    event.preventDefault();
     props.history.push({
       pathname: "/",
       city,
@@ -65,15 +60,10 @@ const Weather = (props) => {
                 className="inputField"
                 onChange={onInputCityChangeHandler}
               />
+              <Button variant="outlined" type="submit" className="form-btn">
+                GO
+              </Button>
             </form>
-            <Button
-              variant="outlined"
-              className="form-btn"
-              fullWidth
-              type="submit"
-            >
-              VIEW WEATHER
-            </Button>
           </CardContent>{" "}
         </Card>
       </div>

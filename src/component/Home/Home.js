@@ -7,7 +7,6 @@ import AddIcon from "@material-ui/icons/Add";
 
 import "./Home.css";
 const Home = (props) => {
-  console.log(props.location.city);
   const city = props.location.city;
   return (
     <div className="home-main-container">
