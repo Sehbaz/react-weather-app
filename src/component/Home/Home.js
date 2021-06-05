@@ -19,6 +19,7 @@ const Home = (props) => {
       </div>
 
       <WeatherData data={city} />
+      <News />
     </div>
   );
 };

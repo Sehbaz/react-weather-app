@@ -39,15 +39,17 @@ const WeatherData = (props) => {
         </div>
         <div className="next-weather-container">
           <span>Next Day 25&deg;</span>
-          <ExpandMoreIcon />
         </div>
       </div>
       <div style={{ display: noweatherContainer }}>
         <div className="weather-data-container">
           <span className="city-name">
-            Add your city to get current weather
+            Add your city to get current weather.
+            <br />
+            Still you can scroll and read top tech news.
           </span>
         </div>
+        <ExpandMoreIcon />
       </div>
     </div>
   );
