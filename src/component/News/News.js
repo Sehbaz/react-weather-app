@@ -44,7 +44,7 @@ const News = () => {
   return (
     <div className="news-main-container">
       <div>
-        <p className="news-title">Top 5 Tech News</p>
+        <p className="news-title">News</p>
       </div>
       <List className={(classes.root, "newList-container")}>
         <div style={{ display: { newAPIContainer } }}></div>

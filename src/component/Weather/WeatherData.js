@@ -6,6 +6,8 @@ const WeatherData = (props) => {
   const [cityName, setCityName] = useState("");
   const [weatherContainer, setWeatherContainer] = useState("none");
   const [noweatherContainer, setNoWeatherContainer] = useState("none");
+  const [weatherDescription, setWeatherDescription] = useState("");
+
   useEffect(() => {
     if (props.data === undefined) {
       setWeatherContainer("none");
@@ -23,6 +25,7 @@ const WeatherData = (props) => {
           (result) => {
             setCityName(result.name);
             setCityTemp(result.main.temp);
+            setWeatherDescription(result.weather[0].description);
           }
           // Note: it's important to handle errors here
           // instead of a catch() block so that we don't swallow
@@ -36,10 +39,12 @@ const WeatherData = (props) => {
       <div style={{ display: weatherContainer }}>
         <div className="weather-data-container">
           <span className="city-name">{cityName}</span>
+          <span className="weather-desc">{weatherDescription}</span>
           <span className="temp">{cityTemp}&deg;</span>
         </div>
         <div className="next-weather-container">
-          <span>Next Day 25&deg;</span>
+          <span className="city-name">news</span>
+          <ExpandMoreIcon />
         </div>
       </div>
       <div style={{ display: noweatherContainer }}>
@@ -47,7 +52,7 @@ const WeatherData = (props) => {
           <span className="city-name">
             Add your city to get current weather.
             <br />
-            Still you can scroll and read top tech news.
+            Still you can scroll and read top news.
           </span>
         </div>
         <ExpandMoreIcon />
