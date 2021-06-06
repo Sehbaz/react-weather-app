@@ -35,7 +35,7 @@ const WeatherData = (props) => {
   }, [props.data]);
 
   return (
-    <div className="weather-main-container">
+    <div className="weather-main-container bg-pan-left ">
       <div style={{ display: weatherContainer }}>
         <div className="weather-data-container">
           <span className="city-name">{cityName}</span>
