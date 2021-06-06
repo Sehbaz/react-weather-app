@@ -8,7 +8,6 @@ const WeatherData = (props) => {
   const [noweatherContainer, setNoWeatherContainer] = useState("none");
   useEffect(() => {
     if (props.data === undefined) {
-      console.log("no data found");
       setWeatherContainer("none");
       setNoWeatherContainer("block");
     } else {
