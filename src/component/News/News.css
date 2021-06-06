@@ -12,3 +12,6 @@
   font-family: "Roboto", sans-serif;
   font-weight: 100;
 }
+.newList-container {
+  max-width: 1440px;
+}

@@ -24,7 +24,7 @@ const News = () => {
   const [newAPIContainer, setNewAPIContainer] = useState("none");
   useEffect(() => {
     fetch(
-      "https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=7035a2ce18004b138c9f980fe58a0f21&pageSize=5"
+      "https://gnews.io/api/v4/top-headlines?token=485d11413be54809e6b29967187593fc&lang=en"
     )
       .then((res) => res.json())
       .then(
@@ -49,13 +49,13 @@ const News = () => {
       <List className={(classes.root, "newList-container")}>
         <div style={{ display: { newAPIContainer } }}></div>
         {items.map((item) => (
-          <ListItem alignItems="flex-start" key={item.author}>
+          <ListItem alignItems="flex-start" key={item.title}>
             <ListItemAvatar>
-              <Avatar alt="Remy Sharp" src={item.urlToImage} />
+              <Avatar alt="Remy Sharp" src={item.image} />
             </ListItemAvatar>
             <ListItemText
-              primary={item.author}
-              secondary={<React.Fragment>{item.title}</React.Fragment>}
+              primary={item.title}
+              secondary={<React.Fragment>{item.description}</React.Fragment>}
             />
           </ListItem>
         ))}
