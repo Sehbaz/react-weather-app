@@ -24,7 +24,7 @@ const News = () => {
   const [newAPIContainer, setNewAPIContainer] = useState("none");
   useEffect(() => {
     fetch(
-      "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=7035a2ce18004b138c9f980fe58a0f21&pageSize=5"
+      "https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=7035a2ce18004b138c9f980fe58a0f21&pageSize=5"
     )
       .then((res) => res.json())
       .then(
