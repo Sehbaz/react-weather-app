@@ -8,9 +8,12 @@ const WeatherData = (props) => {
   const [noweatherContainer, setNoWeatherContainer] = useState("none");
   useEffect(() => {
     if (props.data === undefined) {
+      console.log("no data found");
       setWeatherContainer("none");
       setNoWeatherContainer("block");
     } else {
+      setWeatherContainer("block");
+      setNoWeatherContainer("none");
       fetch(
         "http://api.openweathermap.org/data/2.5/weather?q=" +
           props.data +
@@ -26,10 +29,9 @@ const WeatherData = (props) => {
           // instead of a catch() block so that we don't swallow
           // exceptions from actual bugs in components.
         );
-      setWeatherContainer("block");
-      setNoWeatherContainer("none");
     }
-  });
+  }, [props.data]);
+
   return (
     <div className="weather-main-container">
       <div style={{ display: weatherContainer }}>
