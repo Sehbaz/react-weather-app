@@ -1,3 +1,17 @@
+# Weather/News APP 
+## [Check it here]( https://peaceful-agnesi-6af99d.netlify.app) :fire:
+## This project is created as to understand how to simplify web project implementing ReactJS.
+![](https://github.com/Sehbaz/image-storage-repo/blob/main/weather-app.png)
+
+## This project uses the following technologies:
+
+- ReactJS
+- CSS
+- API
+- Material UI
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
