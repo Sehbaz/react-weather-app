@@ -16,7 +16,7 @@ const WeatherData = (props) => {
       setWeatherContainer("block");
       setNoWeatherContainer("none");
       fetch(
-        "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=" +
+        "http://api.openweathermap.org/data/2.5/weather?q=" +
           props.data +
           "&appid=2ba0e5e8088e78c150e17a6ae4bd66b9&units=metric"
       )
